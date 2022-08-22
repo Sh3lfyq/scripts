@@ -1,0 +1,24 @@
+local player = game.Players.LocalPlayer
+local Erwin = {}
+    if autobuff then
+        for _,v in pairs(game:GetService("Workspace").Unit:GetChildren()) do
+   if v.Name == 'Erwin' and v.Owner.Value == player then
+       table.insert(Erwin, v)
+       if #Erwin == 4 then
+   while true do
+       game:GetService("ReplicatedStorage").Remotes.Input:FireServer('UseSpecialMove', Merlin[1])
+       wait(10)
+       game:GetService("ReplicatedStorage").Remotes.Input:FireServer('UseSpecialMove', Merlin[2])
+       wait(15.5)
+       game:GetService("ReplicatedStorage").Remotes.Input:FireServer('UseSpecialMove', Merlin[1])
+       wait(10)
+       game:GetService("ReplicatedStorage").Remotes.Input:FireServer('UseSpecialMove', Merlin[2])
+       wait(15.5)
+       if autobuff == false then
+           break
+   end
+       end
+end
+end
+end
+end
