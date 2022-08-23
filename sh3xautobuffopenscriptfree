@@ -1,0 +1,293 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local ImageLabel = Instance.new("ImageLabel")
+local Enablemer = Instance.new("TextButton")
+local Enable2X = Instance.new("TextButton")
+local Mer2x = Instance.new("TextLabel")
+local Line1 = Instance.new("TextLabel")
+local Line4 = Instance.new("TextLabel")
+local Line3 = Instance.new("TextLabel")
+local Mer4x = Instance.new("TextLabel")
+local Sh3xtext = Instance.new("TextLabel")
+local Line2 = Instance.new("TextLabel")
+local Line5 = Instance.new("TextLabel")
+local Gayporn = Instance.new("TextLabel")
+local Gayporn2 = Instance.new("TextLabel")
+local Er8x = Instance.new("TextLabel")
+local Er4x = Instance.new("TextLabel")
+local Enable4X = Instance.new("TextButton")
+local Enable8X = Instance.new("TextButton")
+local Open = false
+local FrameObject = Frame
+local UserInputService = game:GetService("UserInputService")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
+Frame.Position = UDim2.new(0.355983764, 0, 0, 0)
+Frame.Size = UDim2.new(0, 283, 0, 371)
+UserInputService.InputBegan:Connect(function(Input, gameprocess)
+	if not gameprocess then
+		if Input.KeyCode == Enum.KeyCode.RightControl then
+			if Open then
+				Open = false
+				Frame.Visible = true
+			else
+				Open = true
+				Frame.Visible = false
+			end
+		end
+	end
+end)
+
+ImageLabel.Parent = Frame
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.Size = UDim2.new(0, 283, 0, 371)
+ImageLabel.Image = "rbxassetid://5053899503"
+
+Enablemer.Name = "Enablemer"
+Enablemer.Parent = ImageLabel
+Enablemer.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+Enablemer.Position = UDim2.new(0.388692588, 0, 0.768194079, 0)
+Enablemer.Size = UDim2.new(0, 63, 0, 20)
+Enablemer.Font = Enum.Font.Arial
+Enablemer.Text = "ON"
+Enablemer.TextColor3 = Color3.fromRGB(255, 255, 255)
+Enablemer.TextSize = 14.000
+
+Enable2X.Name = "Enable2X"
+Enable2X.Parent = ImageLabel
+Enable2X.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+Enable2X.Position = UDim2.new(0.388692588, 0, 0.590296447, 0)
+Enable2X.Size = UDim2.new(0, 63, 0, 20)
+Enable2X.Font = Enum.Font.Arial
+Enable2X.Text = "ON"
+Enable2X.TextColor3 = Color3.fromRGB(255, 255, 255)
+Enable2X.TextSize = 14.000
+Enable2X.MouseButton1Up:Connect(function()
+	if Enable2X.text == "OFF" then
+		Enable2X.Text = "ON"
+		Enable2X.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+		local autobuff = false
+else
+		Enable2X.Text = "OFF"
+		Enable2X.BackgroundColor3 = Color3.fromRGB(76, 255, 0)
+		local autobuff = true
+		local player = game.Players.LocalPlayer
+		local Merlin = {}
+		if autobuff then
+			for _,v in pairs(game:GetService("Workspace").Unit:GetChildren()) do
+				if v.Name == 'Merlin' and v.Owner.Value == player then
+					table.insert(Merlin, v)
+					if #Merlin == 2 then
+						while true do
+							game:GetService("ReplicatedStorage").Remotes.Input:FireServer('UseSpecialMove', Merlin[1])
+							wait(15.5)
+							game:GetService("ReplicatedStorage").Remotes.Input:FireServer('UseSpecialMove', Merlin[2])
+							wait(15.5)
+							if autobuff == false then
+								break
+							end
+						end
+					end
+				end
+			end
+		end
+	end
+end)
+
+Mer2x.Name = "Mer2x"
+Mer2x.Parent = ImageLabel
+Mer2x.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Mer2x.BackgroundTransparency = 1.000
+Mer2x.Position = UDim2.new(0, 0, 0.512129426, 0)
+Mer2x.Size = UDim2.new(0, 283, 0, 23)
+Mer2x.Font = Enum.Font.Oswald
+Mer2x.Text = "Merlin AutoBuff 2X"
+Mer2x.TextColor3 = Color3.fromRGB(255, 255, 255)
+Mer2x.TextSize = 38.000
+
+Line1.Name = "Line1"
+Line1.Parent = ImageLabel
+Line1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Line1.BackgroundTransparency = 1.000
+Line1.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Line1.Position = UDim2.new(0, 0, 0.0619945973, 0)
+Line1.Size = UDim2.new(0, 283, 0, 10)
+Line1.Font = Enum.Font.SourceSans
+Line1.Text = "----------------------"
+Line1.TextColor3 = Color3.fromRGB(255, 255, 255)
+Line1.TextSize = 53.000
+
+Line4.Name = "Line4"
+Line4.Parent = ImageLabel
+Line4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Line4.BackgroundTransparency = 1.000
+Line4.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Line4.Position = UDim2.new(0, 0, 0.644204855, 0)
+Line4.Size = UDim2.new(0, 283, 0, 10)
+Line4.Font = Enum.Font.SourceSans
+Line4.Text = "----------------------"
+Line4.TextColor3 = Color3.fromRGB(255, 255, 255)
+Line4.TextSize = 53.000
+
+Line3.Name = "Line3"
+Line3.Parent = ImageLabel
+Line3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Line3.BackgroundTransparency = 1.000
+Line3.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Line3.Position = UDim2.new(0, 0, 0.463611841, 0)
+Line3.Size = UDim2.new(0, 283, 0, 10)
+Line3.Font = Enum.Font.SourceSans
+Line3.Text = "----------------------"
+Line3.TextColor3 = Color3.fromRGB(255, 255, 255)
+Line3.TextSize = 53.000
+
+Mer4x.Name = "Mer4x"
+Mer4x.Parent = ImageLabel
+Mer4x.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Mer4x.BackgroundTransparency = 1.000
+Mer4x.Position = UDim2.new(0, 0, 0.687331557, 0)
+Mer4x.Size = UDim2.new(0, 283, 0, 23)
+Mer4x.Font = Enum.Font.Oswald
+Mer4x.Text = "Merlin AutoBuff 4X (not work)"
+Mer4x.TextColor3 = Color3.fromRGB(255, 255, 255)
+Mer4x.TextSize = 38.000
+
+Sh3xtext.Name = "Sh3xtext"
+Sh3xtext.Parent = ImageLabel
+Sh3xtext.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Sh3xtext.BackgroundTransparency = 1.000
+Sh3xtext.Size = UDim2.new(0, 283, 0, 23)
+Sh3xtext.Font = Enum.Font.Oswald
+Sh3xtext.Text = "SH3X Autobuff For ASTD"
+Sh3xtext.TextColor3 = Color3.fromRGB(255, 255, 255)
+Sh3xtext.TextSize = 38.000
+
+Line2.Name = "Line2"
+Line2.Parent = ImageLabel
+Line2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Line2.BackgroundTransparency = 1.000
+Line2.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Line2.Position = UDim2.new(0, 0, 0.26954177, 0)
+Line2.Size = UDim2.new(0, 283, 0, 10)
+Line2.Font = Enum.Font.SourceSans
+Line2.Text = "----------------------"
+Line2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Line2.TextSize = 53.000
+
+Line5.Name = "Line5"
+Line5.Parent = ImageLabel
+Line5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Line5.BackgroundTransparency = 1.000
+Line5.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Line5.Position = UDim2.new(0, 0, 0.822102427, 0)
+Line5.Size = UDim2.new(0, 283, 0, 10)
+Line5.Font = Enum.Font.SourceSans
+Line5.Text = "----------------------"
+Line5.TextColor3 = Color3.fromRGB(255, 255, 255)
+Line5.TextSize = 53.000
+
+Gayporn.Name = "Gayporn"
+Gayporn.Parent = ImageLabel
+Gayporn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Gayporn.BackgroundTransparency = 0.750
+Gayporn.Position = UDim2.new(0, 0, 0.938005388, 0)
+Gayporn.Size = UDim2.new(0, 283, 0, 23)
+Gayporn.Font = Enum.Font.Oswald
+Gayporn.Text = "It's openscript because it's too easy to make this shit"
+Gayporn.TextColor3 = Color3.fromRGB(255, 255, 255)
+Gayporn.TextSize = 20.000
+
+Gayporn2.Name = "Gayporn2"
+Gayporn2.Parent = ImageLabel
+Gayporn2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Gayporn2.BackgroundTransparency = 0.750
+Gayporn2.Position = UDim2.new(0, 0, 0.876010776, 0)
+Gayporn2.Size = UDim2.new(0, 283, 0, 23)
+Gayporn2.Font = Enum.Font.Oswald
+Gayporn2.Text = "Press right control to open/close this gui"
+Gayporn2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Gayporn2.TextSize = 26.000
+
+Er8x.Name = "Er8x"
+Er8x.Parent = ImageLabel
+Er8x.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Er8x.BackgroundTransparency = 1.000
+Er8x.Position = UDim2.new(0, 0, 0.320754707, 0)
+Er8x.Size = UDim2.new(0, 283, 0, 23)
+Er8x.Font = Enum.Font.Oswald
+Er8x.Text = "Erwin AutoBuff 8X (not work)"
+Er8x.TextColor3 = Color3.fromRGB(255, 255, 255)
+Er8x.TextSize = 38.000
+
+Er4x.Name = "Er4x"
+Er4x.Parent = ImageLabel
+Er4x.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Er4x.BackgroundTransparency = 1.000
+Er4x.Position = UDim2.new(0, 0, 0.113207549, 0)
+Er4x.Size = UDim2.new(0, 283, 0, 23)
+Er4x.Font = Enum.Font.Oswald
+Er4x.Text = "Erwin AutoBuff 4X"
+Er4x.TextColor3 = Color3.fromRGB(255, 255, 255)
+Er4x.TextSize = 38.000
+
+Enable4X.Name = "Enable4X"
+Enable4X.Parent = ImageLabel
+Enable4X.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+Enable4X.Position = UDim2.new(0.388692588, 0, 0.194070086, 0)
+Enable4X.Size = UDim2.new(0, 63, 0, 20)
+Enable4X.Font = Enum.Font.Arial
+Enable4X.Text = "ON"
+Enable4X.TextColor3 = Color3.fromRGB(255, 255, 255)
+Enable4X.TextSize = 14.000
+Enable4X.MouseButton1Up:Connect(function()
+	if Enable4X.text == "OFF" then
+		Enable4X.Text = "ON"
+		Enable4X.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+		local autobuff = false
+	else
+		Enable4X.Text = "OFF"
+		Enable4X.BackgroundColor3 = Color3.fromRGB(76, 255, 0)
+		local autobuff = true
+		local player = game.Players.LocalPlayer
+		local Merlin = {}
+		if autobuff then
+			for _,v in pairs(game:GetService("Workspace").Unit:GetChildren()) do
+				if v.Name == 'Merlin' and v.Owner.Value == player then
+					table.insert(Merlin, v)
+					if #Merlin == 2 then
+						while true do
+							game:GetService("ReplicatedStorage").Remotes.Input:FireServer('UseSpecialMove', Merlin[1])
+							wait(15.5)
+							game:GetService("ReplicatedStorage").Remotes.Input:FireServer('UseSpecialMove', Merlin[2])
+							wait(15.5)
+							if autobuff == false then
+								break
+							end
+						end
+					end
+				end
+			end
+		end
+	end
+end)
+
+Enable8X.Name = "Enable8X"
+Enable8X.Parent = ImageLabel
+Enable8X.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+Enable8X.Position = UDim2.new(0.388692588, 0, 0.409703493, 0)
+Enable8X.Size = UDim2.new(0, 63, 0, 20)
+Enable8X.Font = Enum.Font.Arial
+Enable8X.Text = "ON"
+Enable8X.TextColor3 = Color3.fromRGB(255, 255, 255)
+Enable8X.TextSize = 14.000
